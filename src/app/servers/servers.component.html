@@ -1,0 +1,45 @@
+<p>The Servers Component outline</p>
+
+<label for='input'>Server Name</label>
+<input
+  id='input'
+  type="text"
+  class='form-control'
+  (input)='onUpdateServerName($event)'
+><br>
+
+<input
+  id='input'
+  type="text"
+  class='form-control'
+  [value]='serverName'
+  (input)='onUpdateServerName($event)'
+><br>
+
+<input
+  id='input'
+  type="text"
+  class='form-control'
+  [(ngModel)]='serverName'
+><br>
+
+<p>{{ serverName }}</p>
+
+<button
+  class='btn btn-primary'
+  [disabled]='!allowNewServer'
+  (click)='onCreateServer()'
+>Add Server</button><br><br>
+
+<p *ngIf='serverCreates'>Server was created, server name is: {{ serverName }}</p>
+
+<!-- <p>{{ allowNewServer }}</p> -->
+
+<!-- <p [innerText]='allowNewServer'></p> -->
+
+<!-- <p>{{ serverCreationStatus }}</p> -->
+
+<app-server></app-server>
+<app-server></app-server>
+<app-server></app-server>
+
